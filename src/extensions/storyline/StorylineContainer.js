@@ -1,12 +1,14 @@
+/* -------------------------------------------------------------------------------------------
+ *  Copyright (c) Florian Guitton. All rights reserved.
+ *  Licensed under the MIT License. See LICENSE in the project root for license information.
+ * ---------------------------------------------------------------------------------------- */
 /* global borderline:true */
+
 import React, { Component } from 'react';
 
 import containerStyles from './styles/Container.css';
 
 class StorylineContainer extends Component {
-
-    componentDidMount() {
-    }
 
     render() {
         let TextEditor = borderline.components.textEditor;
