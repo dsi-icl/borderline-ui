@@ -1,3 +1,8 @@
+/* -------------------------------------------------------------------------------------------
+ *  Copyright (c) Florian Guitton. All rights reserved.
+ *  Licensed under the MIT License. See LICENSE in the project root for license information.
+ * ---------------------------------------------------------------------------------------- */
+
 import { Observable } from 'rxjs';
 
 export default {
@@ -13,6 +18,10 @@ export default {
 
     userLogout: () => query('/logout', {
         method: 'POST'
+    }),
+
+    fetchExtensionsList: () => query('/plugin_store', {
+        method: 'GET'
     })
 };
 

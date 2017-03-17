@@ -1,7 +1,13 @@
+/* -------------------------------------------------------------------------------------------
+ *  Copyright (c) Florian Guitton. All rights reserved.
+ *  Licensed under the MIT License. See LICENSE in the project root for license information.
+ * ---------------------------------------------------------------------------------------- */
+
 const { resolve } = require('path');
 const webpack = require('webpack');
 const html = require('html-webpack-plugin');
 const replace = require('replace-bundle-webpack-plugin');
+const copy = require('copy-webpack-plugin');
 
 const distFolder = resolve(__dirname, '../dist');
 const sourceFolder = resolve(__dirname, '../src');
@@ -54,6 +60,10 @@ module.exports = function () {
 
     // defining the plugins to be used for bundling
     const plugins = [
+        new copy([{
+            from: 'node_modules/monaco-editor/min/vs',
+            to: 'vs',
+        }]),
         new webpack.optimize.CommonsChunkPlugin(prod ? {
             name: 'vendor',
             filename: 'vendor.bundle.js',
@@ -142,6 +152,7 @@ module.exports = function () {
         externals: {
             // TODO Consider removing external libraries from the bundle
             // 'react': { ... }
+            fs: '{}'
         },
         module: {
             rules: [{

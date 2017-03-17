@@ -1,3 +1,8 @@
+/* -------------------------------------------------------------------------------------------
+ *  Copyright (c) Florian Guitton. All rights reserved.
+ *  Licensed under the MIT License. See LICENSE in the project root for license information.
+ * ---------------------------------------------------------------------------------------- */
+
 @import './Font.css';
 
 :root {
@@ -36,6 +41,6 @@
     --background-color-000: color(var(--background-color-end) blend(var(--background-color-start) 000%));
 
     /* DIMENSIONS */
-    --sidebar-width: 60px;
+    --sidebar-width: 50px;
     --sidebar-expand-width: 250px;
 }
